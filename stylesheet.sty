@@ -1,0 +1,42 @@
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{setspace}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+% Stylesheet
+\setlength{\parindent}{0pt}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\topmargin}{0in}
+%\setlength{\headsep}{-.25in}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.5in}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\setstretch{1.2} 
+
+% Custom environments
+% Syntax: \newtopic{topic-name}{responsible}{time}{text}
+\newenvironment{newtopic}[4]{
+    \section{#1}
+    \fcolorbox{black}{pink}{\parbox{\textwidth}{
+        \textbf{Topic:} #4\\[0.3cm]
+        \textbf{Responsible:} #2\\
+        \textbf{Estimated time:} #3
+    }}\\[0.5cm]
+}
+
+% Syntax: \discussion{text}
+\newenvironment{discussion}[1]{
+    \textbf{Discussion:} #1\\
+    \hrule \vspace{0.5cm}
+}
+
+
+% Keep the two newlines. Environments won't work otherwise.
